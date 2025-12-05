@@ -1,13 +1,19 @@
-
 output "network_id" {
-  description = "Terraform ID of the private network"
+  description = "OVH network ID"
   value       = ovh_cloud_project_network_private.network_private.id
 }
-output "name" {
-  description = "Name of the private network"
+
+output "network_name" {
+  description = "Network name"
   value       = ovh_cloud_project_network_private.network_private.name
 }
-output "region_openstack_ids" {
-  description = "OpenStack network IDs per region (needed for subnets)"
+
+output "network_regions" {
+  description = "Regions associated with the private network"
+  value       = ovh_cloud_project_network_private.network_private.regions
+}
+
+output "network_regions_openstack_ids" {
+  description = "Mapping of region → OpenStack network ID"
   value       = ovh_cloud_project_network_private.network_private.regions_openstack_ids
 }
