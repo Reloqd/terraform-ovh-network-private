@@ -6,7 +6,7 @@ locals {
 
 resource "ovh_cloud_project_network_private" "network_private" {
   service_name = var.network_private_service_name
-  name         = locals.network_private_name
+  name         = local.network_private_name
   vlan_id      = var.network_private_vlan_id
-  regions      = locals.network_private_regions
+  regions      = local.network_private_regions
 }
